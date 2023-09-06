@@ -27,3 +27,7 @@ it("Return Hi 99th .friend when given hi 99th .friend", () => {
 it("Return [`Hello`, 'World!'] when given ['hello', 'world!']", () => {
     expect(capitalize(["hello", "world!"])).toEqual(["Hello", "World!"]);
 })
+
+it("Return [`Hello`, ['Mother', 'Father And'], 'World!'] when given ['hello', ['mother', 'father and'], 'world!']", () => {
+    expect(capitalize(['hello', ['mother', 'father and'], 'world!'])).toEqual([`Hello`, ['Mother', 'Father And'], 'World!']);
+})
