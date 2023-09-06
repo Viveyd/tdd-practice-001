@@ -1,3 +1,3 @@
-export default function capitalize(){
+export default function capitalize(a, b){
     
 }
