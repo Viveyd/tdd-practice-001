@@ -18,4 +18,12 @@ it("Returns 3c2ba1 given 1ab2c3", () => {
 
 it("Returns int 9 given int 9", () => {
     expect(reverseString(9)).toBe(9);
-})
+});
+
+it("Returns 123 given [3,2,1]", () => {
+    expect(reverseString([3,2,1])).toBe("123");
+});
+
+it("Returns 12345 given [5,4,[3,2],1]", () => {
+    expect(reverseString([5,4,[3,2],1])).toEqual("12345");
+});
