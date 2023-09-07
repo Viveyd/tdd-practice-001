@@ -1,18 +1,18 @@
 export default class Calculator{
-    
-    add(a,b){
-        return a + b;
+
+    add(...args){
+        return args.reduce((sum, n) => sum + n);
     }
 
-    subtract(a,b){
-        return a - b;
+    subtract(...args){
+        return args.reduce((diff, n) => diff - n);
     }
 
-    multiply(a,b){
-        return a * b;
+    multiply(...args){
+        return args.reduce((prod, n) => prod * n);
     }
 
-    divide(a,b){
-        return a / b;
+    divide(...args){
+        return args.reduce((quot, n) => quot / n);
     }
 }

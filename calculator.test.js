@@ -10,7 +10,6 @@ it("Return sum of more than 2 arguments", () => {
     expect(calculator.add(5,3,2)).toBe(10);
 })
 
-
 it("Return diff of a & b", () => {
     expect(calculator.subtract(5,3)).toBe(2);
 })
