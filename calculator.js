@@ -10,13 +10,8 @@ export default class Calculator{
     }
 
     subtract(...args){
-        return args.reduce((diff, n) => {
-            if(Array.isArray(n)){
-                const subtrahend = n.reduce((acc, cur) => Array.isArray(cur) ? acc - this.subtract(cur) : acc - cur);
-                return diff - subtrahend;
-            } 
-            else return diff - n;
-        });
+        if(Array.isArray(args[0])) args[0] = this.subtract(... args[0]);
+        return args.reduce((diff, n) => Array.isArray(n) ? diff - this.subtract(...n): diff - n);
     }
 
     multiply(...args){
