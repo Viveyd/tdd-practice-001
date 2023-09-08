@@ -16,3 +16,13 @@ it("(Z,1) => A", () => {
     expect(caesarCipher("Z", 1)).toBe("A");
 })
 
+it("(ab,1) => bc", () => {
+    expect(caesarCipher("ab", 1)).toBe("bc");
+})
+
+it("(yz, 1) => za", () => {
+    expect(caesarCipher("yz", 1)).toBe("za");
+})
+
+
+
