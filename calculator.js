@@ -20,7 +20,14 @@ export default class Calculator{
     }
 
     divide(...args){
-        if(Array.isArray(args[0])) args[0] = this.divide(...args[0]);
-        return args.reduce((quot, n) => Array.isArray(n) ? quot / this.divide(...n) : quot / n);
+        let acc = args[0];
+        if(Array.isArray(acc)) acc = this.divide(...acc);
+        for(let i = 1; i < args.length; i++){
+            if(acc === 0 || acc === NaN) return acc;
+            else if(Array.isArray(args[i])) acc /= this.divide(...args[i]);
+            else if(isNaN(args[i])) continue;
+            else acc /= args[i];
+        }
+        return acc;
     }
 }
