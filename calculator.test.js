@@ -49,3 +49,8 @@ it("Return quotient of more than 2 arguments", () => {
 it("Return quotient of array", () => {
     expect(calculator.divide([12,2,3])).toBe(2);
 })
+
+// it("Methods work with gaps in input", () => {
+//     const input = [5,,2,3];
+//     expect([calculator.add(...input), calculator.subtract(...input), calculator.multiply(input), calculator.divide(input)]).toEqual([10, 0, 30, 0.8333333333333334]);
+// })
