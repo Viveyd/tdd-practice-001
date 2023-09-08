@@ -25,13 +25,7 @@ export default class Calculator{
     }
 
     divide(...args){
-        return args.reduce((quot, n) => {
-            if(Array.isArray(n)){
-                const divisor = n.reduce((acc, cur) => Array.isArray(cur) ? acc / this.divide(cur) : acc / cur);
-                console.log(divisor);
-                return quot / divisor;
-            }
-            else return quot / n;
-        });
+        if(Array.isArray(args[0])) args[0] = this.divide(...args[0]);
+        return args.reduce((quot, n) => Array.isArray(n) ? quot / this.divide(...n) : quot / n);
     }
 }
