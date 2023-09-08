@@ -1,12 +1,7 @@
 export default class Calculator{
 
     add(...args){
-        return args.reduce((sum, n) => {
-            if(Array.isArray(n)) return sum + n.reduce((acc, cur) => {
-               return Array.isArray(cur) ? acc + this.add(cur) : acc + cur;
-            }, 0);
-            return sum + n;
-        }, 0);
+        return args.reduce((sum, n) => Array.isArray(n) ? sum + this.add(...n) : sum + n, 0);
     }
 
     subtract(...args){
