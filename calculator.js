@@ -10,13 +10,13 @@ export default class Calculator{
     }
 
     multiply(...args){
-        return args.reduce((prod, n) => {
-            if(Array.isArray(n)){
-                const multiplier = n.reduce((acc, cur) => Array.isArray(cur) ? acc * this.multiply(cur) : acc * cur);
-                return prod * multiplier;
-            }
-            else return prod * n;
-        }, 1);
+        let acc = 1;
+        for(let i = 0; i < args.length; i++){
+            if(acc === 0) return 0;
+            else if(Array.isArray(args[i])) acc *= this.multiply(...args[i]);
+            else acc *= args[i];
+        }
+        return acc;
     }
 
     divide(...args){
