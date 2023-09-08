@@ -1,5 +1,5 @@
 import analyzeArray from "./analyzeArray"
 
-it('Array 1', () => {
-    expect(analyzeArray([])).toBe(1)
+it('Returns average', () => {
+    expect(analyzeArray([1,2,3]).average).toBe(2)
 })
