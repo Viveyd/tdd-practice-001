@@ -32,5 +32,13 @@ it("(y#.dz, 1) => z#.ea", () => {
     expect(caesarCipher("y#.dz", 1)).toBe("z#.ea");
 })
 
+it("(z, 50) => x", () => {
+    expect(caesarCipher("z", 50)).toBe("x");
+})
+
+it("(Z, 50) => X", () => {
+    expect(caesarCipher("Z", 50)).toBe("X");
+})
+
 
 
